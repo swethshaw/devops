@@ -16,7 +16,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
@@ -24,8 +24,8 @@ pipeline {
         stage('Stop Existing Container') {
             steps {
                 script {
-                    sh 'docker ps -q --filter "name=$DOCKER_CONTAINER" | grep -q . && docker stop $DOCKER_CONTAINER || true'
-                    sh 'docker rm $DOCKER_CONTAINER || true'
+                    sh "docker ps -q --filter 'name=${DOCKER_CONTAINER}' | grep -q . && docker stop ${DOCKER_CONTAINER} || true"
+                    sh "docker rm ${DOCKER_CONTAINER} || true"
                 }
             }
         }
@@ -33,8 +33,7 @@ pipeline {
         stage('Run New Container') {
             steps {
                 script {
-                    // Run the new container from the built image
-                    sh 'docker run -d -p 80:80 --name $DOCKER_CONTAINER $DOCKER_IMAGE'
+                    sh "docker run -d -p 80:80 --name ${DOCKER_CONTAINER} ${DOCKER_IMAGE}"
                 }
             }
         }
@@ -42,10 +41,10 @@ pipeline {
 
     post {
         success {
-            echo 'Website deployed successfully!'
+            echo '✅ Website deployed successfully!'
         }
         failure {
-            echo 'Deployment failed.'
+            echo '❌ Deployment failed.'
         }
     }
 }
