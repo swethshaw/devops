@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your show feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="icon" type="image/icon" href="pic/snas-logo.png">
+</head>
+<body>
+        <div class="logo">
+            <a href="index.html"><img src="pic/snas-logo.png" alt="book" class="logoimg"></a>
+        </div>
+    <div class="detail">
+        <h1>FeedBack</h1>
+        <form action="index.html" method="get">
+            <center>
+                <label>Full name:</label>
+                <input type="text" placeholder="Full Name" class="full" required/><br><br>
+                <label class="email">Email ID:</label>
+                <input type="email" placeholder="Email ID" class="full" required/><br><br>
+                <div class="feed"><Label> FeedBack:</label>
+                <input type="radio" name="Feedback" value="Best"> Best 
+                <input type="radio" name="Feedback" value="Awesome"> Awesome
+                <input type="radio" name="Feedback" value="Excellent"> Excellent <br> 
+                </div>
+                <div class="remark"><label>Remark</label><br>
+                <textarea minlength="10" maxlength="1000" placeholder="Enter The Remark" required></textarea></div>
+                <input type="submit" value="Submit" class="submit">
+            </center>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your show login</title>
+    <link rel="stylesheet" href="sign in.css">
+    <link rel="icon" type="image/icon" href="pic/snas-logo.png"
+</head>
+<body>
+    <div>
+        <div class="logo">
+            <a href="index.html"><img src="pic/snas-logo.png" alt="book" class="logoimg"></a>
+        </div>
+        <h1>SIGN IN</h1> 
+    </div>
+<div>
+    <form method="get" onsubmit="checkForm()">
+        <center>
+            <label class="email">Email ID: 
+                <input type="email" placeholder="Enter your Email" name="email" class="pass" value="">
+            </label><br>
+            <label class="password"><br>Password:
+                <input type="password"  placeholder="Enter Your Password" name="password" id="myInput"  class="pass"value=""><br/>
+                <br>
+            </label>
+            <label><input type="checkbox" onclick="myFunction()" class="check"> <label class="show">Show Password</label>
+        <br><br>
+        <input type="submit" value="Login" class="login">
+    </a>
+        </center>
+    </form>
+</div> 
+    <p class="for"><a href="#">
+        Forgot Password
+    </a></p>
+    <p class="sign">Don't have account ?
+        <a href="sign up.html" target="_self">Sign Up Here
+        </a>
+    </p>
+    <script>
+        function checkForm(){
+                    var myEmail = document.forms[0].email.value;
+                    var myPass = document.forms[0].password.value;
+                    if(myEmail == '' || myPass == ''){
+                        alert("Please fill out all the fields");
+                        return false;
+                    } else if(myPass.length <= 6){
+                        alert("Please ensure your password must be of length 6 or more");
+                    }
+                     else {
+                        alert("Log in successfully")
+                        window.open("index.html")              
+                        return true;
+                    }
+                };
+        function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body{
+    background-color: rgba(54, 181, 22, 0.648);;
+}
+.logoimg{
+    height:25px;
+    cursor: pointer;
+}
+h1{
+    font-size: 90px;  
+    color:white;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.signupborder{
+    border: 10px solid;
+    box-sizing: content-box;
+    margin-left:400px;
+    margin-right: 400px ;
+    height: 750px;
+    margin-top: 10px;
+    background-color:black;
+    border-color:rgb(255, 255, 255);
+    padding: 30px;
+    word-spacing: 15px;
+}
+label{
+    font-size:35px;
+    color:white;
+}
+.in{
+    font-size: 30px;
+    border-radius:10px;
+    padding:5px;
+    margin-top: 15px;
+    width:250px
+}
+.in::placeholder{
+    font-size: 20px;
+}
+.d{
+    text-transform: uppercase;
+    font-size: 25px;
+    border-radius:10px;
+    padding:5px;
+    margin-top: 15px;
+    width:220px
+}
+.top{
+    margin-top: -20px;
+}
+.check{
+    transform: scale(1.5);
+}
+a{
+    color: aqua;
+    text-decoration: none;
+}
+.submit{
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 32px;
+    font-size: 30px;
+    background-color: rgb(46, 212, 12);
+    color:black;
+    border-color:white;
+    text-transform: uppercase;
+}
+.submit:hover{
+    color:rgba(255, 255, 255, 0.816);
+    background-color: gold;
+    transform: scale(1.2);
+}
+p{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+input{
+    cursor: pointer;
+}

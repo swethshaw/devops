@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your Show sign up</title>
+    <link rel="stylesheet" href="sign up.css">
+    <link rel="icon" href="pic/snas-logo.png">
+</head>
+<body>
+        <a href="index.html"><img src="pic/snas-logo.png" alt="book" class="logoimg"></a>
+    <div class="signupborder">
+        <h1>SIGN UP</h1>
+        <div class="top">
+        <form action="sign.html" method="get" class="formfull">
+            <label>Title:</label>
+            <label> 
+                <input type="radio" name="title" value="mr">
+                Mr
+            </label>
+            <label>
+                <input type="radio" name="title" value="mrs">
+                Mrs
+            </label>
+            <label>
+                <input type="radio" name="title" value="miss">
+                Miss
+            </label>
+            <br>
+            <label id>
+                Full name
+            </label>
+            <input type="text" placeholder="First name" class="in" required/>
+            <input type="text" placeholder="Last name" class="in" required/>
+            <br>
+            <label>Email</label>
+            <input type="email" placeholder="Email ID" class="in" required/>
+            <br>
+            <label>Phone number</label>
+            <input type="tel" placeholder="Phone No." class="in" minlength="10" maxlength="10" required/>
+            <br>
+            <label>Password</label>
+            <input type="password" placeholder="Password" class="in" required/>
+            <br>
+            <label>Confirm Your Password</label>
+            <input type="password" placeholder="Password" class="in" required/>
+            <br>
+            <label>Date of birth:</label>
+            <input type="date" class="d" required/>
+            <br><br>
+            <label>
+                <input type="checkbox" value="terms" class="check" required/>
+                I agree to the <a href="#">terms and conditions</a>
+            </label>
+            <br>
+            
+            <center><input type="submit" value="Submit" class="submit"></center>
+        </form>
+        <p class="sign">Already a User?
+            <a href="sign.html" target="_self">Sign in Here
+            </a>
+        </p>
+    </div>
+    </div>
+
+</body>
+</html>

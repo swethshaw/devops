@@ -1,0 +1,88 @@
+body
+{
+    background-image: url("pic/back.jpg");
+    height: 100%;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+h1
+{
+    font-size: 80px;
+    text-align: center;
+    color: rgb(237, 105, 17);
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;    
+}
+.email
+{
+    font-size: 30px;
+    color: rgb(22, 224, 22);
+    font-weight: 500;
+    word-spacing: 5px;
+}
+.password
+{
+    font-size: 30px;
+    color: rgb(22, 224, 22);
+    font-weight: 500;
+}
+.pass{
+    font-size: 30px;
+    border-style: double;
+}
+.login
+{
+    font-size: 30px;
+    padding:15px;
+    background-color: rgb(85, 255, 0);
+    color: red;
+    background-origin: padding-box; 
+    width: 130px;
+    cursor: pointer; 
+    border-radius: 20%;
+    font-weight: 500;
+}
+.login:hover
+{
+    color: white;
+    background-color:blue;
+}
+.for
+{
+    font-size:25px;
+    color: rgb(245, 15, 15);
+    font-weight: 500;
+    text-align: center;
+}
+.sign
+{
+    font-size: 25px;
+    color: rgb(245, 15, 15);
+    font-weight: 500;
+    text-align: center;
+}
+a
+{
+    color: floralwhite;
+    font-size: 25px ;
+    font-weight: 200;
+    text-decoration-line: none;
+}
+.check
+{
+    transform: scale(1.7);
+}
+.show
+{
+    font-size: 30px;
+    color: rgb(243, 219, 189);
+}
+.logo{
+    display: flex;
+}
+.logoimg{
+    height:30px;
+    width: 60px;
+}
