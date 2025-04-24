@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_HUB = credentials('docker-hub-credentials')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/your-username/my-website.git'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t my-website:${BUILD_NUMBER} .'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'docker run --rm my-website:${BUILD_NUMBER} nginx -t'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                sh 'docker stop my-website || true'
+                sh 'docker rm my-website || true'
+                sh 'docker run -d -p 8080:80 --name my-website my-website:${BUILD_NUMBER}'
+            }
+        }
+        
+        stage('Cleanup') {
+            steps {
+                sh 'docker system prune -f'
+            }
+        }
+    }
+    
+    post {
+        success {
+            slackSend color: "good", message: "Deployment successful: ${env.BUILD_URL}"
+        }
+        failure {
+            slackSend color: "danger", message: "Deployment failed: ${env.BUILD_URL}"
+        }
+    }
+}
