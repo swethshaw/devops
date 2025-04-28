@@ -2,31 +2,39 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Code') {
+        stage('Clone') {
             steps {
-                echo 'Cloning code from GitHub...'
-                
+                git branch: 'main', url: 'https://github.com/Harshit1103/react-docker.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Building Docker image...'
-                
+                bat 'npm install'
             }
         }
 
-        stage('Push to DockerHub') {
+        stage('Build') {
             steps {
-                echo 'Pushing Docker image to DockerHub...'
-                
-                }
+                bat 'npm run build'
             }
+        }
 
-        stage('Deploy Application') {
+        stage('Docker Build') {
             steps {
-                echo 'Deploying application...'
+                bat 'docker build -t react-container .'
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                bat '''
+    docker stop react-container || echo "No container to stop"
+    docker rm react-container || echo "No container to remove"
+'''
+
                 
+                bat 'docker run -d -p 8080:80 --name react-container react-container'
             }
         }
     }
