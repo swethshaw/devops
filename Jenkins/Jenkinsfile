@@ -34,7 +34,7 @@ pipeline {
 '''
 
                 
-                bat 'docker run -d -p 8080:80 --name react-container react-container'
+                bat 'docker run -d -p 8050:80 --name react-container react-container'
             }
         }
     }
