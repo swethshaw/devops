@@ -22,19 +22,19 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t react-container .'
+                sh 'docker build -t react-container .'
             }
         }
 
         stage('Docker Run') {
             steps {
-                bat '''
+                sh '''
     docker stop react-container || echo "No container to stop"
     docker rm react-container || echo "No container to remove"
 '''
 
                 
-                bat 'docker run -d -p 8050:80 --name react-container react-container'
+                sh 'docker run -d -p 8050:80 --name react-container react-container'
             }
         }
     }
