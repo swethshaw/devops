@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Check Docker') {
+            steps {
+                bat 'docker --version'
+            }
+        }
         stage('Clone') {
             steps {
                 git branch: 'main', url: 'https://github.com/Harshit1103/react-docker.git'
